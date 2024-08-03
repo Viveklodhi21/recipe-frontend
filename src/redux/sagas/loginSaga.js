@@ -10,7 +10,6 @@ function* loginUserSaga(action) {
   try {
     const response = yield call(loginUserApi, action.payload);
     yield put({ type: LOGIN_USER_SUCCESS, payload: response?.data });
-    console.log("response?.data", response?.data?.token);
 
     localStorage.setItem("userToken", response?.data?.token);
     localStorage.setItem("userId", response?.data?.userId);

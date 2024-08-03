@@ -25,7 +25,6 @@ const ExpandMore = styled((props) => {
 }));
 
 const SearchListComponent = ({ recipe, handleFavorite, id }) => {
-  console.log("recipe cardd", recipe);
 
   const [expanded, setExpanded] = React.useState(false);
 

@@ -22,7 +22,6 @@ const Home = () => {
   const FavoriteRecipies = useSelector(
     (state) => state?.getAllFavorites?.userInfo
   );
-  console.log("FavoriteRecipies", FavoriteRecipies);
 
   const [favoritePage, setFavoritePage] = useState(false);
 
@@ -92,7 +91,7 @@ const Home = () => {
       </div>
       {favoritePage ? (
         <FavoriteList FavoriteRecipies={FavoriteRecipies} id={id} />
-      ) : (
+      ) : recipeList?.length ? (
         <RecipeList
           recipes={recipeList}
           searchRecipe={searchRecipe}
@@ -100,6 +99,8 @@ const Home = () => {
           handleFavorite={handleFavorite}
           id={id}
         />
+      ) : (
+        "No Data Found!"
       )}
     </div>
   );

@@ -27,7 +27,6 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function FavoriteRecipe({ favoriteRecipe }) {
-  console.log("FavoriteRecipe", FavoriteRecipe);
 
   const [expanded, setExpanded] = React.useState(false);
 

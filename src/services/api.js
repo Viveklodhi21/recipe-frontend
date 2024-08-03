@@ -50,8 +50,6 @@ export const favoriteRecipeApi = async (data) => {
 };
 
 export const deleteFavoriteRecipeApi = async (data) => {
-  console.log("dataaaa", data);
-
   const config = {
     url: `/api/recipes/favorite/${data}`,
     method: "DELETE",

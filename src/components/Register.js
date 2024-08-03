@@ -13,11 +13,10 @@ const Register = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const registerSelector = useSelector((state) => state?.user);
-  console.log("registerSelector", registerSelector);
 
   useEffect(() => {
-    if (registerSelector !== undefined) {
-      navigate("/dashboard");
+    if (registerSelector?.userInfo !== null) {
+      navigate("/login");
     }
   }, [registerSelector]);
 
@@ -32,7 +31,7 @@ const Register = () => {
     }
 
     try {
-        dispatch(registerUserAction({ email, password }));
+      dispatch(registerUserAction({ email, password }));
     } catch (error) {
       setError("Registration failed. Please try again.");
     }
@@ -100,7 +99,9 @@ const Register = () => {
           >
             Register
           </Button>
-          <span>Already have an account? <a href="/login">login here</a></span>
+          <span>
+            Already have an account? <a href="/login">login here</a>
+          </span>
         </Box>
       </Box>
     </Container>

@@ -23,7 +23,6 @@ const Login = () => {
     e.preventDefault();
     setError("");
     setSuccess(false);
-    console.log("called");
 
     try {
       dispatch(loginUserAction({ email, password }));
@@ -84,6 +83,9 @@ const Login = () => {
           >
             Login
           </Button>
+          <span>
+            Don't have an account? <a href="/">Register here</a>
+          </span>
         </Box>
       </Box>
     </Container>
