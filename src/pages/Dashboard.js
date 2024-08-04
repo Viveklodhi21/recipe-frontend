@@ -91,7 +91,7 @@ const Home = () => {
       </div>
       {favoritePage ? (
         <FavoriteList FavoriteRecipies={FavoriteRecipies} id={id} />
-      ) : recipeList?.length ? (
+      ) : recipeList?.length && searchRecipe?.length ? (
         <RecipeList
           recipes={recipeList}
           searchRecipe={searchRecipe}
